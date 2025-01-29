@@ -1,0 +1,8 @@
+{
+    "title": "Sample Blog",
+    "description": "This is a sample blog",
+    "date": "2019-01-01",
+    "author": "John Doe",
+    "id": "sample_blog",
+    "cover": "cover.jpg"
+}
