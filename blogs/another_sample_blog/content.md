@@ -1,4 +1,4 @@
-# Hi! This is a sample blog for testing
+# Hi! This is a another sample blog for testing
 
 ### Introduction
 

@@ -1,0 +1,8 @@
+{
+    "title": "Another Sample Blog",
+    "description": "This is a another sample blog",
+    "date": "2025-01-01",
+    "author": "John Doe",
+    "id": "another_sample_blog",
+    "cover": "vercel.webp"
+}
