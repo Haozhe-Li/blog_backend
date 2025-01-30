@@ -1,5 +1,5 @@
 from flask import Flask, send_file
-import markdown2
+import mistune
 from pygments import highlight
 from pygments.lexers import get_lexer_by_name
 from pygments.formatters import HtmlFormatter
@@ -51,21 +51,19 @@ def get_blog(blog_id):
         blog_content = f.read()
 
     # Convert markdown content to HTML
-    blog_html = markdown2.markdown(
-        blog_content
-    )
-
-    blog_html = re.sub(r'<code>(.*?)</code>', r'<pre><code>\1</code></pre>', blog_html, flags=re.DOTALL)
+    blog_html = mistune.create_markdown(renderer=mistune.HTMLRenderer())(blog_content)
 
 
-    # def highlight_code(html):
-    #     """
-    #     Function to highlight code blocks in the HTML content.
-    #     Uses Pygments to apply syntax highlighting.
-    #     """
-    #     lexer = get_lexer_by_name("python", stripall=True)
-    #     formatter = HtmlFormatter()
-    #     return highlight(html, lexer, formatter)
+
+
+    def highlight_code(html):
+        """
+        Function to highlight code blocks in the HTML content.
+        Uses Pygments to apply syntax highlighting.
+        """
+        lexer = get_lexer_by_name("python", stripall=True)
+        formatter = HtmlFormatter()
+        return highlight(html, lexer, formatter)
 
     # # Apply syntax highlighting to the HTML content
     # blog_html = highlight_code(blog_html)
@@ -78,4 +76,4 @@ def get_blog(blog_id):
 
 if __name__ == "__main__":
     # Run the Flask application in debug mode
-    app.run(debug=True)
+    app.run(debug=True, port=8000)
