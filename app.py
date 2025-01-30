@@ -5,6 +5,7 @@ from pygments.lexers import get_lexer_by_name
 from pygments.formatters import HtmlFormatter
 import json
 import os
+import re
 
 # Initialize the Flask application
 app = Flask(__name__)
@@ -51,8 +52,11 @@ def get_blog(blog_id):
 
     # Convert markdown content to HTML
     blog_html = markdown2.markdown(
-        blog_content, extras=["fenced-code-blocks", "code-friendly"]
+        blog_content
     )
+
+    blog_html = re.sub(r'<code>(.*?)</code>', r'<pre><code>\1</code></pre>', blog_html, flags=re.DOTALL)
+
 
     # def highlight_code(html):
     #     """
