@@ -35,7 +35,8 @@ def get_blog(blog_id):
         blog = markdown(f.read())
     with open(f"{blogs_folder}/{blog_id}/overview.json", "r") as f:
         overview = json.load(f)
-    return {"content": blog, "overview": overview}
+    overview["content"] = blog
+    return {"blog": overview}
 
 
 if __name__ == "__main__":
