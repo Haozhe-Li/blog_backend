@@ -25,7 +25,7 @@ def home():
 def get_cover_img(blog_id):
     with open(f"{blogs_folder}/{blog_id}/overview.json", "r") as f:
         overview = json.load(f)
-    cover_img_path = f"{blogs_folder}/{blog_id}/{overview['cover_image']}"
+    cover_img_path = f"{blogs_folder}/{blog_id}/{overview['cover']}"
     return send_file(cover_img_path, mimetype='image/jpeg')
 
 
