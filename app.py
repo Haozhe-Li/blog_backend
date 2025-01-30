@@ -1,5 +1,6 @@
 from flask import Flask
 from markdown2 import markdown
+from flask import send_file
 import json
 import os
 
@@ -19,6 +20,13 @@ def home():
         response.append(overview)
     response.sort(key=lambda x: x["date"], reverse=True)
     return {"blogs": response}
+
+@app.route("/get/<blog_id>/cover")
+def get_cover_img(blog_id):
+    with open(f"{blogs_folder}/{blog_id}/overview.json", "r") as f:
+        overview = json.load(f)
+    cover_img_path = f"{blogs_folder}/{blog_id}/{overview['cover_image']}"
+    return send_file(cover_img_path, mimetype='image/jpeg')
 
 
 @app.route("/get/<blog_id>")
