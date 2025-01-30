@@ -2,27 +2,43 @@
 
 ### Introduction
 
-A brief introduction of nothing ... This sample blog aims to test features.
+A brief introduction of nothing ... This sample blog aims to test various Markdown features:
+* Bullet points
+* Tables
+* Code blocks
+* And more!
 
 ### Main Content
 
-This is where the main content of the blog goes. You can write about various topics, share your thoughts, and provide valuable information to your readers.
+This is where the main content of the blog goes. Let's explore different formatting:
 
-### Some test on code block
-Code block is important for blog! try some python here!
+#### Lists
+1. First numbered item
+2. Second numbered item
+   * Nested bullet point
+   * Another nested point
+3. Third numbered item
 
-````python
+#### Blockquotes
+> This is a blockquote
+> It can span multiple lines
+>> And can be nested
+
+#### Tables
+| Feature | Support | Notes |
+|---------|---------|-------|
+| Tables  | ✅      | Basic |
+| Lists   | ✅      | Nested|
+| Code    | ✅      | Multi |
+
+#### Task List
+- [x] Write introduction
+- [ ] Add more content
+- [ ] Finalize blog
+
+### Code Examples
+Here are different code blocks:
+
+```python
 def hello():
-  return "hi"
-````
-
-
-
-
-### Conclusion
-
-Summarize the key points discussed in the blog and provide a closing thought or call to action for your readers.
-
-### References
-
-If you have any references or sources, list them here to give credit and provide further reading for your audience.
+    return "hi"
