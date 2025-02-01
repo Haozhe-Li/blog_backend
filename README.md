@@ -16,7 +16,7 @@ A quick setup guide to help you upload your first blog!
 
    ![Image Demo](https://cdn.haozheli.com/website_demo.gif)
 
-3. Upload your cover image to this folder.
+3. Your blog cover should also using a external CDN link.
 
 4. Create an `overview.json` file with the following structure:
    ````json
@@ -26,7 +26,7 @@ A quick setup guide to help you upload your first blog!
        "date": "Date in YYYY-MM-DD format, e.g., 2025-01-29",
        "author": "Author's name",
        "id": "IMPORTANT! THIS MUST BE THE SAME AS THE NAME OF THE FOLDER MENTIONED EARLIER",
-       "cover": "Cover image file name, e.g., cover.webp"
+       "cover": "Cover image file link, e.g. https://cdn.example.com/cover.webp"
    }
    ````
 

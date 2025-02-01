@@ -13,6 +13,7 @@ app = Flask(__name__)
 # Define the folder where blog data is stored
 blogs_folder = "blogs"
 
+
 @app.route("/get")
 def home():
     """
@@ -29,16 +30,6 @@ def home():
     response.sort(key=lambda x: x["date"], reverse=True)
     return {"blogs": response}
 
-@app.route("/get/<blog_id>/cover")
-def get_cover_img(blog_id):
-    """
-    Endpoint to get the cover image of a specific blog.
-    Reads the overview.json file to get the cover image path and returns the image file.
-    """
-    with open(f"{blogs_folder}/{blog_id}/overview.json", "r") as f:
-        overview = json.load(f)
-    cover_img_path = f"{blogs_folder}/{blog_id}/{overview['cover']}"
-    return send_file(cover_img_path, mimetype="image/jpeg")
 
 @app.route("/get/<blog_id>")
 def get_blog(blog_id):
@@ -52,9 +43,6 @@ def get_blog(blog_id):
 
     # Convert markdown content to HTML
     blog_html = mistune.create_markdown(renderer=mistune.HTMLRenderer())(blog_content)
-
-
-
 
     def highlight_code(html):
         """
@@ -73,6 +61,7 @@ def get_blog(blog_id):
         overview = json.load(f)
     overview["content"] = blog_html
     return {"blog": overview}
+
 
 if __name__ == "__main__":
     # Run the Flask application in debug mode
