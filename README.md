@@ -12,7 +12,9 @@ A quick setup guide to help you upload your first blog!
 
 1. First, create a new folder under the `/blogs` directory. You can name this folder whatever you want, but the name of the folder MUST be the same as the article `id` mentioned later.
 
-2. Create a `markdown` file called `content.md` and write your blog in this file. Refer to the [Markdown Guide](https://www.markdownguide.org) for syntax details.
+2. Create a `markdown` file called `content.md` and write your blog in this file. Refer to the [Markdown Guide](https://www.markdownguide.org) for syntax details. Noted that all the images in the `content.md` should not be added as local image file, instead, upload your image, or any other kind of files to external CDN bucket for instant delivery. [CDN helper](https://cdnhelp.haozheli.com) might be helpful. With this tool, you could easily add your files or images like this:
+
+   ![Image Demo](https://cdn.haozheli.com/website_demo.gif)
 
 3. Upload your cover image to this folder.
 
@@ -42,4 +44,4 @@ A quick setup guide to help you upload your first blog!
 
 ### Acknowledgements
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License.

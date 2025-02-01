@@ -19,23 +19,6 @@ This is where the main content of the blog goes. Let's explore different formatt
    * Another nested point
 3. Third numbered item
 
-#### Blockquotes
-> This is a blockquote
-> It can span multiple lines
->> And can be nested
-
-#### Tables
-| Feature | Support | Notes |
-|---------|---------|-------|
-| Tables  | ✅      | Basic |
-| Lists   | ✅      | Nested|
-| Code    | ✅      | Multi |
-
-#### Task List
-- [x] Write introduction
-- [ ] Add more content
-- [ ] Finalize blog
-
 ### Code Examples
 Here are different code blocks:
 
