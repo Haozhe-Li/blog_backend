@@ -1,8 +1,5 @@
-from flask import Flask, send_file
+from flask import Flask
 import mistune
-from pygments import highlight
-from pygments.lexers import get_lexer_by_name
-from pygments.formatters import HtmlFormatter
 import json
 import os
 import re
@@ -43,18 +40,6 @@ def get_blog(blog_id):
 
     # Convert markdown content to HTML
     blog_html = mistune.create_markdown(renderer=mistune.HTMLRenderer(escape=False))(blog_content)
-
-    def highlight_code(html):
-        """
-        Function to highlight code blocks in the HTML content.
-        Uses Pygments to apply syntax highlighting.
-        """
-        lexer = get_lexer_by_name("python", stripall=True)
-        formatter = HtmlFormatter()
-        return highlight(html, lexer, formatter)
-
-    # # Apply syntax highlighting to the HTML content
-    # blog_html = highlight_code(blog_html)
 
     # Read the blog overview and add the HTML content to it
     with open(f"{blogs_folder}/{blog_id}/overview.json", "r") as f:
