@@ -42,7 +42,7 @@ def get_blog(blog_id):
         blog_content = f.read()
 
     # Convert markdown content to HTML
-    blog_html = mistune.create_markdown(renderer=mistune.HTMLRenderer())(blog_content)
+    blog_html = mistune.create_markdown(renderer=mistune.HTMLRenderer(escape=False))(blog_content)
 
     def highlight_code(html):
         """
