@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, redirect
 import mistune
 import json
 import os
@@ -9,6 +9,10 @@ app = Flask(__name__)
 
 # Define the folder where blog data is stored
 blogs_folder = "blogs"
+
+@app.route("/")
+def redir():
+    return redirect("https://ooink.fun")
 
 
 @app.route("/get")
